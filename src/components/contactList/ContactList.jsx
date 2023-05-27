@@ -1,10 +1,13 @@
 
-const ContactList = ({ name, number }) => (
-    <ul>
-        <li>
-            <span>{name}</span> <span>{number}</span>
+const ContactList = ({ contactsNames }) => (
+    <ol>
+        {contactsNames.map(contactName => (
+        <li key={contactName.id}>
+            <span>{contactName.name}</span> <span>{contactName.number}</span>
         </li>
-    </ul>
+        ))}
+
+    </ol>
 )
 
 export default ContactList;

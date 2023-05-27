@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { nanoid } from 'nanoid';
 
 // import ContactForm from './contactForm/ContactForm';
 import ContactList from './contactList/ContactList';
@@ -16,24 +17,35 @@ class App extends Component{
   //   this.setState({ [name]: value });      
   // }; 
   
-  handleState = (foobar) => {
-    this.setState({ name: foobar });
-  }
+  // handleState = (foobar) => {
+  //   this.setState({ name: foobar });
+  // }
 
   handleSubmitContact = evt => {
-    evt.preventDefault();   
-    const { name } = evt.target.elements;
+    evt.preventDefault();
+    const form = evt.currentTarget;
+    const { name, number } = evt.target.elements;
     const contactName = name.value;
-    console.log(contactName);
-    this.handleState(contactName);
+    const contactNumber = number.value;
+    // console.log(contactName);
+    // this.handleState(contactName);
+    // this.setState({ name: contactName })
 
-    // this.props.onSubmit({ ...this.state });
+    const newUser = { id: nanoid(), name: contactName, number: contactNumber };
+    
+    this.setState({ contacts: [...this.state.contacts, newUser] });
+
+    // this.setState({ contacts: [...this.state.contacts, contactName] });
+    // this.setState({contacts: [...this.state.contacts, contactName]});
+    // console.log(this.props);
+    form.reset();   
   }
 
   render() {
 
-    const { name } = this.state;
-    console.log('name render',name);
+    const { contacts } = this.state;
+    // console.log('name', name);
+    // console.log('contacts', this.state.contacts);
 
     return (
       <div>        
@@ -42,6 +54,9 @@ class App extends Component{
           <label>
             <input type="text" name="name" required/>
           </label>
+          <label>
+            <input type="tel" name="number" required/>
+          </label>
           <button type="submit">Add Contact</button>
         </form>
 
@@ -49,7 +64,7 @@ class App extends Component{
         {/* <ContactForm formSubmit={this.handleSubmitContact} onSubmit={values => console.log(values)} /> */}
         <h2>Contacts</h2>       
         {/* <Filter /> */}
-        <ContactList name={name} number='124563221588'/>        
+        <ContactList contactsNames={contacts} />        
       </div>
     )
   }  
