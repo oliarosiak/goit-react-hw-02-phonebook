@@ -11,10 +11,17 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-size: 25;
-  color:#003f5c;
+  font-weight: bold;
+  color:white;
+  /* color:#003f5c; */
   background: linear-gradient(to right, #d9a7c7, #fffcdc);
+
+    background-image: url(./img/hp-pic.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
 }
 
 code {
