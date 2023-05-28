@@ -40,10 +40,10 @@ class App extends Component{
     const filtered = contacts.filter(contact => {
       const filterLower = filter.toLowerCase();
       const contactNameLower = contact.name.toLowerCase();
-      if (contactNameLower.includes(filterLower)) {
-        return contactNameLower;
-      }      
-    })  
+      
+      return contactNameLower.includes(filterLower);
+    });
+    
     console.log(filtered);
 
     this.setState({ contacts: [...filtered] });
