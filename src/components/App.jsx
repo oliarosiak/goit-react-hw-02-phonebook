@@ -37,7 +37,7 @@ class App extends Component{
     });
 
     if (checkedName) {
-      return alert(`${name} is already in contacts!`);
+      return alert(`${name} => Magic name is already in contacts!`);
     }
 
     const newUser = {
