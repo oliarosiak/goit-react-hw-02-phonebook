@@ -1,0 +1,26 @@
+.list{   
+    padding: 16px;
+    border: 1px solid darkgray;
+    list-style-type: none;
+    background-color: rgba(169, 169, 169, 0.407);
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted darkgray;
+}
+
+.item:not(:last-child){
+    margin-bottom: 4px;
+}
+
+.btn{
+    padding: 4px 12px;
+    color: white;
+    font-weight: bold;
+    background-color: inherit;
+    border: 2px solid darkgray;
+}

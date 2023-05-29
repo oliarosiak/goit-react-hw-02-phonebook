@@ -70,7 +70,7 @@ class App extends Component{
     const { filter } = this.state;  
 
     return (
-      <div>
+      <div style={{width: 600}}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.handleOnSubmit} />
         <h2>Contacts</h2>
