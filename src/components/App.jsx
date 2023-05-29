@@ -33,7 +33,7 @@ class App extends Component{
       const nameLower = name.toLowerCase();
       const contactNameLower = contact.name.toLowerCase();
 
-      return contactNameLower === nameLower;
+      return contactNameLower === nameLower || contact.number === number;
     });
 
     if (checkedName) {
