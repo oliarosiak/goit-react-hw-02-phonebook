@@ -71,7 +71,7 @@ class App extends Component{
 
     return (
       <div style={{width: 600}}>
-        <h1>Phonebook</h1>
+        <h1>Hogwarts Magical Phonebook</h1>
         <ContactForm onSubmit={this.handleOnSubmit} />
         <h2>Contacts</h2>
         <Filter filterValue={filter} filteringMethod={this.heandleOnFilter} />

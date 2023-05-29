@@ -1,16 +1,16 @@
 .list{   
-    padding: 16px;
-    border: 1px solid darkgray;
+    padding: 12px;
+    border: 1px solid var(--border-color);
     list-style-type: none;
-    background-color: rgba(169, 169, 169, 0.407);
+    background-color: var(--bcg-color);
 }
 
-.item{
+.item{  
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 4px 0;
-    border-bottom: 1px dotted darkgray;
+    border-bottom: 1px dotted var(--border-color);
 }
 
 .item:not(:last-child){
@@ -19,8 +19,13 @@
 
 .btn{
     padding: 4px 12px;
-    color: white;
+    color: var(--text-color);
     font-weight: bold;
     background-color: inherit;
-    border: 2px solid darkgray;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 0 0 12px var(--accent-color);
 }

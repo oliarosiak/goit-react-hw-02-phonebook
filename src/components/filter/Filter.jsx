@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
+import css from './Filter.module.css';
 
 const Filter = ({ filterValue, filteringMethod }) => (
-    <input type="text" name="search"
+  <div className={css.wrapper} >
+    <label className={css.label} >
+      Find contacts by name
+      <input type="text" name="search" className={css.input}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Use only letters, apostrophe, dash and spaces."
+        title="Use only letters, apostrophe, dash and spaces."        
         value={filterValue} onChange={filteringMethod}
-    />
+      />
+    </label>
+  </div>
 )
 
 Filter.propTypes = {
