@@ -12,6 +12,7 @@ const INITIAL_STATE = {
       { id: 'id-3', name: 'Hermione Granger', number: '745-17-79' },
       { id: 'id-4', name: 'Rubeus Hagrid', number: '645-17-79' },
       { id: 'id-5', name: 'Draco Malfoy', number: '227-91-26' },
+      { id: 'id-6', name: 'Minerva', number: '223-15-87' },
     ],
     filter: '',
 };
@@ -28,6 +29,18 @@ class App extends Component{
   }
   
   handleOnSubmit = ({ name, number }) => { 
+    const { contacts } = this.state;
+
+    const checkedName = contacts.find(contact => {
+      const nameLower = name.toLowerCase();
+      const contactNameLower = contact.name.toLowerCase();
+
+      return contactNameLower === nameLower;
+    });
+
+    if (checkedName) {
+      return alert(`${name} is already in contacts!`);
+    }
 
     const newUser = {
       id: nanoid(),
@@ -48,6 +61,17 @@ class App extends Component{
       return contactNameLower.includes(filterLower);
     })
   }
+
+  onDeleateButton = (id) => {
+    const { contacts } = this.state;
+    console.log(id);
+
+    const updateUsersList = contacts.filter(contact => contact.id !== id)
+
+    this.setState({
+      contacts: [...updateUsersList],
+    });    
+  }
   
   render() {
     const { filter } = this.state;  
@@ -58,7 +82,7 @@ class App extends Component{
         <ContactForm onSubmit={this.handleOnSubmit} />
         <h2>Contacts</h2>
         <Filter option={filter} search={this.heandleOnFilter} />
-        <ContactList contactsNames={this.handleUpdateContactList()} />
+        <ContactList contactsNames={this.handleUpdateContactList()} deleteBtn={this.onDeleateButton} />
       </div>
     )
   }  
