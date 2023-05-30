@@ -11,6 +11,7 @@
     justify-content: space-between;
     padding: 4px 0;
     border-bottom: 1px dotted var(--border-color);
+    
 }
 
 .item:not(:last-child){
@@ -23,7 +24,8 @@
     font-weight: bold;
     background-color: inherit;
     border: 2px solid var(--border-color);
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: no-drop;
 }
 
 .btn:hover{

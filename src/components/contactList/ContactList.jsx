@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
+import { GiSnitchQuidditchBall, GiHarryPotterSkull } from "react-icons/gi";
 import css from './ContactList.module.css';
+
 
 const ContactList = ({ contactsNames, deleteBtn }) => (
     <ul className={css.list}>
         {contactsNames.map(contactName => (
             <li key={contactName.id} className={css.item} >
             <div>
-                <span>{contactName.name}:</span> <span>{contactName.number}</span>
+                <GiSnitchQuidditchBall /> <span>{contactName.name}:</span> <span>{contactName.number}</span>
             </div>
-            <button type='button' onClick={()=>deleteBtn(contactName.id)} className={css.btn} >delete</button> 
+            <button type='button' onClick={()=>deleteBtn(contactName.id)} className={css.btn} > <GiHarryPotterSkull/> Avada Kedavra</button> 
         </li>
         ))}
-
     </ul>
 )
 
