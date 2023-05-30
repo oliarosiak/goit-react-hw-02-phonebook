@@ -9,7 +9,7 @@ export const FilterContainer = styled.div`
 
 export const FilterLabel = styled.label`
     display: inline-block;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 `;
 
 export const FilterInput = styled.input`
@@ -20,12 +20,13 @@ export const FilterInput = styled.input`
     color: var(--text-color);
     background-color: inherit;
     border: 2px solid var(--border-color);    
+    outline: 1px solid var(--accio-color);
     cursor: zoom-in;    
     transition: width 250ms cubic-bezier(0.5, 0, 0.75, 0) 25ms;
     &:hover, 
     &:focus{
     width: 700px;
     outline: 1px solid var(--accent-color);
-    box-shadow: 0 0 12px var(--accent-color);
+    box-shadow: 0 0 20px var(--accio-color);    
     }
 `;

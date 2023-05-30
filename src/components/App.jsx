@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { MainHeader, SecondHeader } from './App.styled';
 
 import ContactForm from './contactForm/ContactForm';
 import Filter from './filter/Filter';
@@ -71,9 +72,9 @@ class App extends Component{
 
     return (
       <div >
-        <h1 style={{textTransform: 'uppercase', letterSpacing: 8}} >Hogwarts Magical Phonebook</h1>
+        <MainHeader >Hogwarts Magical Phonebook</MainHeader>
         <ContactForm onSubmit={this.handleOnSubmit} />
-        <h2>Contacts</h2>
+        <SecondHeader>Contacts</SecondHeader>
         <Filter filterValue={filter} filteringMethod={this.heandleOnFilter} />
         <ContactList contactsNames={this.handleUpdateContactList()} deleteBtn={this.onDeleateButton} />
       </div>
