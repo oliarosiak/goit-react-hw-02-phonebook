@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { GiWhiteBook } from 'react-icons/gi';
 import { FormContainer, FormLabel, FormInput, FormBtm } from './ContactForm.styled';
 
@@ -50,6 +51,10 @@ class ContactForm extends Component{
             </FormContainer>
         )
     }
+}
+
+ContactForm.propType = {
+    onSubmit: PropTypes.func.isRequired,   
 }
 
 export default ContactForm;
