@@ -23,7 +23,7 @@
     background-color: inherit;
     border: 2px solid var(--border-color);
     cursor: zoom-in;
-    transition: width 400ms cubic-bezier(0.5, 0, 0.75, 0) 50ms;
+    transition: width 250ms cubic-bezier(0.5, 0, 0.75, 0) 25ms;
 }
 
 .input:focus, 

@@ -28,6 +28,6 @@
     cursor: no-drop;
 }
 
-.btn:hover{
+.btn:hover{    
     box-shadow: 0 0 12px var(--accent-color);
 }

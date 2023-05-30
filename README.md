@@ -6,6 +6,7 @@ To your attention, an application for saving phone numbers - Hogwarts Magical Ph
 
 `«React»`
 `«Javascript»`
+`«React Icons / library»`
 `«Module CSS»`
 `«prop-types / npm»`
 
